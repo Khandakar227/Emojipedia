@@ -99,7 +99,7 @@ public class Data {
         }
 
         selectedGroup = groupName;
-        System.out.println(selectedGroup);
+        // System.out.println(selectedGroup);
         IconsPanel.emojis = emojiMap.get(groupName);
     }
 }

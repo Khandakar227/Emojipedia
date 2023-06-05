@@ -17,15 +17,10 @@ Emojipedia is a Java Swing application that provides details about various emoji
 * Clone the Emojipedia repository from GitHub.
 * Compile the Java source files using the appropriate Java compiler.
 
-    ``` javac *.java ```
+## Screenshot
+![Screenshot](doc\screenshot.png)
 
-* Run the application by executing the main class.
-java Main
-
-Screenshot 2
-Screenshot 2: Example details of an emoji showing its name, emoji representation, and Unicode codepoints.
-
-* Future Enhancements
+## Future Enhancements
 * Implementation of advanced search options.
 
 ## Contributions
@@ -40,9 +35,8 @@ The development of Emojipedia was inspired by the desire to explore Java program
 Contact
 If you have any questions, suggestions, or feedback, please feel free to contact the project maintainer:
 
-Name: [Your Name]
-Email: [Your Email]
-GitHub: [Your GitHub Profile]
+Name: Khandakar Shakib Al Hasan  
+Email: xenonknight54@gmail.com
 
 
 

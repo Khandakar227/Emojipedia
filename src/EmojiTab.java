@@ -16,7 +16,7 @@ public class EmojiTab extends JDialog {
 
     EmojiTab(Emoji emoji, IconsPanel iconsPanel) throws FontFormatException, IOException {
         this.setIconImage(ImageIO.read(new File("resources\\favicon.png")));
-        this.setAlwaysOnTop(true);
+        // this.setAlwaysOnTop(true);
         this.setTitle(emoji.name);
         
         JPanel box = new JPanel();
