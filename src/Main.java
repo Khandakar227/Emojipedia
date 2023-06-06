@@ -1,19 +1,14 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.io.File;
-
-import javax.imageio.ImageIO;
-// import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
-public class App {
+public class Main {
     public static void main(String[] args) throws Exception {
         new MyFonts();
-        
         new Data();
-        // ArrayList<Emoji> emojis = data.emojis;
-       
+
         Navbar navbar = new Navbar();
         IconsPanel iconsPanel = new IconsPanel();
         Aside aside = new Aside(Data.groups, iconsPanel);
@@ -22,9 +17,10 @@ public class App {
         
         scrollableIconPanel.getVerticalScrollBar().setUnitIncrement(16);
         aside.setPreferredSize(new Dimension(200, 100));
-
  
-        mainWindowFrame.setIconImage(ImageIO.read(new File("resources\\favicon.png")));
+        ImageIcon favIcon = new ImageIcon(Main.class.getClassLoader().getResource("favicon.png"));
+
+        mainWindowFrame.setIconImage(favIcon.getImage());
         mainWindowFrame.add(navbar, BorderLayout.NORTH);
         mainWindowFrame.add(aside, BorderLayout.WEST);
         mainWindowFrame.add(scrollableIconPanel, BorderLayout.CENTER);

@@ -1,11 +1,10 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontFormatException;
-import java.io.File;
 import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,7 +14,8 @@ import javax.swing.border.EmptyBorder;
 public class EmojiTab extends JDialog {
 
     EmojiTab(Emoji emoji, IconsPanel iconsPanel) throws FontFormatException, IOException {
-        this.setIconImage(ImageIO.read(new File("resources\\favicon.png")));
+        ImageIcon tabIcon = new ImageIcon(getClass().getResource("favicon.png"));
+        this.setIconImage(tabIcon.getImage());
         // this.setAlwaysOnTop(true);
         this.setTitle(emoji.name);
         

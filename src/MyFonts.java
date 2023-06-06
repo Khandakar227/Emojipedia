@@ -1,7 +1,6 @@
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
-import java.io.File;
 import java.io.IOException;
 
 public class MyFonts {
@@ -10,9 +9,8 @@ public class MyFonts {
 
     MyFonts() {
         try {
-         
             NotoEmojiFont = Font
-            .createFont(Font.TRUETYPE_FONT, new File("resources\\Noto_Emoji\\NotoEmoji-VariableFont_wght.ttf"))
+            .createFont(Font.TRUETYPE_FONT, Main.class.getClassLoader().getResourceAsStream("NotoEmoji-VariableFont_wght.ttf"))
             .deriveFont(40f);
             
             ge.registerFont(NotoEmojiFont);
@@ -25,7 +23,7 @@ public class MyFonts {
         }
     }
     static public Font seogeUiFont(float fontSize) throws FontFormatException, IOException {
-        Font SeogeUI = Font.createFont(Font.TRUETYPE_FONT, new File("resources\\Roboto\\seguiemj.ttf"))
+        Font SeogeUI = Font.createFont(Font.TRUETYPE_FONT, Main.class.getClassLoader().getResourceAsStream("seguiemj.ttf"))
         .deriveFont(fontSize);
         ge.registerFont(SeogeUI);
 
@@ -33,7 +31,7 @@ public class MyFonts {
     }
     static public Font RobotoFont(float fontSize) throws FontFormatException, IOException {
         Font Roboto = Font
-        .createFont(Font.TRUETYPE_FONT, new File("resources\\Roboto\\Roboto-Regular.ttf"))
+        .createFont(Font.TRUETYPE_FONT, Main.class.getClassLoader().getResourceAsStream("Roboto-Regular.ttf"))
         .deriveFont(fontSize);
         ge.registerFont(Roboto);
 
@@ -41,7 +39,7 @@ public class MyFonts {
     };
     static public Font RobotoFont(int style, float fontSize) throws FontFormatException, IOException {
         Font Roboto = Font
-        .createFont(Font.TRUETYPE_FONT, new File("resources\\Roboto\\Roboto-Regular.ttf"))
+        .createFont(Font.TRUETYPE_FONT, Main.class.getClassLoader().getResourceAsStream("Roboto-Regular.ttf"))
         .deriveFont(style, fontSize);
         ge.registerFont(Roboto);
 
@@ -49,7 +47,7 @@ public class MyFonts {
     };
     static public Font NotoFont(int style, float fontSize) throws FontFormatException, IOException {
         Font NotoFont = Font
-            .createFont(Font.TRUETYPE_FONT, new File("resources\\Noto_Emoji\\NotoEmoji-VariableFont_wght.ttf"))
+            .createFont(Font.TRUETYPE_FONT, Main.class.getClassLoader().getResourceAsStream("NotoEmoji-VariableFont_wght.ttf"))
             .deriveFont(style, fontSize);
         ge.registerFont(NotoEmojiFont);
         

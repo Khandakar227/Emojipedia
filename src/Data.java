@@ -1,8 +1,13 @@
-import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+
+import javax.swing.JOptionPane;
+
 import com.opencsv.CSVReader;
 
 public class Data {
@@ -13,7 +18,9 @@ public class Data {
 
     Data() {
         try {
-            FileReader csvData = new FileReader("resources\\emoji_df.csv", StandardCharsets.UTF_8);
+            InputStream in = getClass().getResourceAsStream("emoji_df.csv");
+            BufferedReader csvData = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
+            
             reader = new CSVReader(csvData);
 
             String[] nextLineStrings;
@@ -22,8 +29,8 @@ public class Data {
 
                 if (i++ == 0)
                     continue;
-
-                Emoji emoji = new Emoji();
+                    
+                    Emoji emoji = new Emoji();
 
                 emoji.emoji = nextLineStrings[0];
                 emoji.name = nextLineStrings[1];
@@ -43,46 +50,10 @@ public class Data {
             }
 
         } catch (Exception e) {
+            JOptionPane.showInternalMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
             System.out.println("[Error]: " + e.getMessage());
         }
     }
-
-    // private static void startThread(CSVReader reader) {
-    // SwingWorker<String, Emoji> sw = new SwingWorker<>() {
-
-    // @Override
-    // protected String doInBackground() throws Exception {
-    // String[] nextLineStrings;
-    // int i = 0;
-    // while ((nextLineStrings = reader.readNext()) != null) {
-
-    // if (i++ == 0)
-    // continue;
-
-    // Emoji emoji = new Emoji();
-
-    // emoji.emoji = nextLineStrings[0];
-    // emoji.name = nextLineStrings[1];
-    // emoji.group = nextLineStrings[2];
-    // emoji.sub_group = nextLineStrings[3];
-    // emoji.codepoints = nextLineStrings[4];
-
-    // ArrayList<Emoji> emojis = emojiMap.get(emoji.group);
-
-    // if (emojis == null) {
-    // emojis = new ArrayList<>();
-    // emojiMap.put(emoji.group, emojis);
-    // }
-    // emojis.add(emoji);
-
-    // groups.add(emoji.group);
-    // IconsPanel.emojis.add(emoji);
-    // }
-    // return "Complete";
-    // }
-    // };
-    // sw.execute();
-    // }
 
     public static void setSelectedGroup(String groupName) {
 

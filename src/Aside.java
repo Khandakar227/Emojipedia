@@ -10,7 +10,8 @@ import java.util.Set;
 import javax.swing.*;
 
 public class Aside extends JPanel implements ActionListener {
-    static Set<String> groups;
+
+	static Set<String> groups;
     private JButton allButton;
     ArrayList<JButton> grpButtons = new ArrayList<>();
     IconsPanel iconsPanel;

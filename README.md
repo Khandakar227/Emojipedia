@@ -18,7 +18,7 @@ Emojipedia is a Java Swing application that provides details about various emoji
 * Compile the Java source files using the appropriate Java compiler.
 
 ## Screenshot
-![Screenshot](doc\screenshot.png)
+![Screenshot](doc/screenshot.png)
 
 ## Future Enhancements
 * Implementation of advanced search options.

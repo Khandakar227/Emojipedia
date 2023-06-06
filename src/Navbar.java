@@ -14,7 +14,8 @@ import javax.swing.border.EmptyBorder;
 public class Navbar extends JPanel {
     Navbar() throws FontFormatException, IOException {
         this.setBorder(new EmptyBorder(0, 5, 0, 0));
-        ImageIcon navIcon = new ImageIcon("resources\\open-book-emoji-48.png");
+
+        ImageIcon navIcon = new ImageIcon(getClass().getResource("open-book-emoji-48.png"));
         JLabel navHead = new JLabel(" Emojipedia");
         
         Image image = navIcon.getImage(); // transform it 
